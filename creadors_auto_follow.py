@@ -33,6 +33,7 @@ for i, creador in enumerate(creadors):
             By.CSS_SELECTOR, 'button[data-a-target="notifications-toggle"]'))
         follow_button = driver.find_element(By.CSS_SELECTOR,
                                             'button[data-a-target="follow-button"]')
+        time.sleep(1)  # wait for animation to finish TODO wait until clicable
         follow_button.click()
         print("Followed {} {}/{}".format(creador, i + 1, num_creadors))
     except NoSuchElementException:
